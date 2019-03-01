@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import {BrowserRouter, Switch} from 'react-router-dom';
 
-//Pages
+import HomeTemplateRoute from './routes/HomeTemplateRoute';
+
 import Home from "./pages/Home";
 
 class App extends Component {
@@ -9,7 +10,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <Switch>
-          <Route path="/" exact component={Home}></Route>
+          <HomeTemplateRoute path="/" exact component={Home}></HomeTemplateRoute>
         </Switch>
       </BrowserRouter>
     );

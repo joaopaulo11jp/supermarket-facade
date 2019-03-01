@@ -1,4 +1,4 @@
-/*import { fade } from '@material-ui/core/styles/colorManipulator';
+import { fade } from '@material-ui/core/styles/colorManipulator';
 
 export default (theme) => {
   debugger;
@@ -49,11 +49,11 @@ export default (theme) => {
           paddingLeft: theme.spacing.unit * 10,
           transition: theme.transitions.create('width'),
           width: '100%',
-        //  [theme.breakpoints.up('md')]: {
-        //    width: 200,
-        //  },
+          /*[theme.breakpoints.up('md')]: {
+            width: 200,
+          },*/
         },
       }
     )
   
-  };*/
+  };
