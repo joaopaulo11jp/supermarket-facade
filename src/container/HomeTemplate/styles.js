@@ -1,20 +1,7 @@
-const drawerWidth = 240;
-
 export default (theme) => {
   return{
     root: {
-      flexGrow: 1,
-      display: 'flex'
-    },
-    drawer: {
-      width: drawerWidth,
-      flexShrink: 0
-    },
-    drawerPaper: {
-      width: drawerWidth
-    },
-    toolbar: {
-      ...theme.mixins.toolbar
+      flexGrow: 1
     },
     content: {
       flexGrow: 1,
