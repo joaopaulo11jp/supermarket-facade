@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
-import {Toolbar, InputBase, Menu, MenuItem} from '@material-ui/core';
+import {Toolbar, InputBase, Menu, MenuItem, Badge} from '@material-ui/core';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import LocationOnIcon from '@material-ui/icons/LocationOn';
 import styles from './styles';
 
 import logo from '../../assets/Bravo_Supermarket.png';
@@ -24,6 +26,10 @@ class HomeAppBar extends Component {
     if(this.props.handleClose){
       this.props.handleClose(e);
     }
+  }
+
+  handleBasketClick = (e) => {
+    console.log('Not implemented yet! :)');
   }
 
   render() {
@@ -49,12 +55,20 @@ class HomeAppBar extends Component {
                 input: classes.inputInput
               }}/>
             </div>
+            <IconButton color="inherit">
+              <LocationOnIcon/>
+            </IconButton>
             <IconButton 
                 aria-owns={open ? 'menu-appbar' : undefined}
                 aria-haspopup="true"
                 color="inherit"
                 onClick={this.handleMenu}>
               <AccountCircle/>
+            </IconButton>
+            <IconButton color="inherit" onClick={this.handleBasketClick}>
+              <Badge badgeContent={99} color="secondary">
+                <ShoppingCartIcon/>
+              </Badge>
             </IconButton>
             <Menu
               anchorEl={menuAnchorEl}
