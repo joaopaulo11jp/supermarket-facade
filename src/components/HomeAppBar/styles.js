@@ -7,6 +7,9 @@ export default (theme) => {
         root: {
           flexGrow: 1,
         },
+        appBarRoot: {
+          zIndex: theme.zIndex.drawer + 1
+        },
         grow: {
           flexGrow: 1,
         },

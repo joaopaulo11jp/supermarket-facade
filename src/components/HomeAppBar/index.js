@@ -31,12 +31,12 @@ class HomeAppBar extends Component {
     const open = Boolean(menuAnchorEl);
 
     return (
-      <AppBar position="static">
+      <AppBar position="fixed" className={classes.appBarRoot}>
           <Toolbar>
             <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
               <MenuIcon />
             </IconButton>
-            <img src={logo} alt="Bravo supermercado!" width={160.6} heigth={10.517}/>
+            <img src={logo} alt="Bravo supermercado!" width={140.6} heigth={8.517}/>
             {/*<Typography variant="h6" color="inherit" className={classes.grow}>
               Supermercado
             </Typography>*/}
