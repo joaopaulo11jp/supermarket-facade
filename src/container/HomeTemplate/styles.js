@@ -8,6 +8,10 @@ export default (theme) => {
       height: '100%',
       backgroundColor: theme.palette.background.default,
       padding: theme.spacing.unit * 3,
+      paddingLeft: theme.spacing.unit * 32
+    },
+    toolbar: {
+      ...theme.mixins.toolbar
     }
   };
 }
