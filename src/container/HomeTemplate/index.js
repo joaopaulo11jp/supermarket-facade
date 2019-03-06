@@ -5,6 +5,10 @@ import styles from './styles';
 import HomeAppBar from '../../components/HomeAppBar';
 import HomeDrawer from '../../components/HomeDrawer';
 
+import HomeCarousel from '../../components/HomeCarousel';
+
+const colors = ["7732bb", "047cc0", "00884b", "e3bc13", "db7c00", "aa231f"];
+
 class HomeTemplate extends Component {
   state = {
     menuAnchorEl: undefined
@@ -16,6 +20,10 @@ class HomeTemplate extends Component {
 
   handleClose = (e) => {
     this.setState({menuAnchorEl: undefined});
+  }
+
+  handleImageClick = (e) => {
+    console.lof('handleImageClick not implemented yet! :)');
   }
 
   render (){
@@ -32,6 +40,7 @@ class HomeTemplate extends Component {
         <HomeDrawer/>
         <main className={classes.content}>
           <div className={classes.toolbar}/>
+          <HomeCarousel/>
           {this.props.children}
         </main>
       </div>
