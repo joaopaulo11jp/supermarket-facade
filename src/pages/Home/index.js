@@ -3,6 +3,12 @@ import HomeCarousel from '../../components/HomeCarousel';
 import ProductBox from '../../container/ProductBox';
 
 class Home extends Component {
+
+  putOnBasket = ({productId, quantity}) => {
+    console.log('putOnBasketFunction - ProductId:'+productId+' Quantity:'+quantity);
+    //the redux dispatch here is comming soon...
+  }
+
   render(){
     return(
       <div>
@@ -12,9 +18,7 @@ class Home extends Component {
           description={'huehue'}
           productId={1}
           price={'R$ 99,00'}
-          plusQuantityFunction={() => {console.log('Not implemented yet! :)')}}
-          subtractQuantityFunction={() => {console.log('Not implemented yet! :)')}}
-          putOnBasketFunction={() => {console.log('Not implemented yet! :)')}}
+          putOnBasketFunction={this.putOnBasket}
         />
       </div>
     );

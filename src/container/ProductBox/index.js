@@ -12,27 +12,30 @@ const PRODUCT_IMAGE_WIDTH = 100;
 
 class ProductBox extends Component {
   state = {
-    productId: undefined,
-    description: '',
-    image: undefined
+    quantity: 0
   }
 
-  handlePlusQuantity = (e) => {
-    if(this.props.plusQuantityFunction) {
-      this.props.plusQuantityFunction();
+  plusQuantity = (e) => {
+    console.log('PLUS')
+    this.setState({quantity: this.state.quantity + 1})
+  }
+
+  subtractQuantity = (e) => {
+    if(this.state.quantity > 0)
+      this.setState({quantity: this.state.quantity - 1});
+  }
+
+  putOnBasket = (e) => {
+    if(this.props.putOnBasketFunction){
+      this.props.putOnBasketFunction({productId: this.props.productId, 
+                                      quantity: this.state.quantity});
+      
+      this.clearProductQuantity();
     }
   }
 
-  handleSubtractQuantity = (e) => {
-    if(this.props.subtractQuantityFunction) {
-      this.props.subtractQuantityFunction();
-    }
-  }
-
-  handleProductConfirmation = (e) => {
-    if(this.props.putOnBasketFunction) {
-      this.props.putOnBasketFunction();
-    }
+  clearProductQuantity = () => {
+    this.setState({quantity: 0});
   }
 
   componentDidMount(){
@@ -63,15 +66,12 @@ class ProductBox extends Component {
         <div className={classes.priceSpacing}/>
         <p>{price}</p>
         <div className={classes.quantityInputSpacing}/>
-          <QuantityInput/>
-        {/*<Product 
-          description={description}
-          image={image}
-          price={price}
-          plusQuantityFunction={() => {console.log('Not implemented yet! :)')}}
-          subtractQuantityFunction={() => {console.log('Not implemented yet! :)')}}
-          putOnBasketFunction={() => {console.log('Not implemented yet! :)')}}
-        />*/}
+          <QuantityInput
+            quantity={this.state.quantity}
+            plusQuantityFunction={this.plusQuantity}
+            subtractQuantityFunction={this.subtractQuantity}
+            putOnBasketFunction={this.putOnBasket}
+          />
       </div>
     );
   }
@@ -83,8 +83,6 @@ ProductBox.propTypes = {
   image: PropTypes.object,
   description: PropTypes.string.isRequired,
   productId: PropTypes.number.isRequired,
-  plusQuantityFunction: PropTypes.func.isRequired,
-  subtractQuantityFunction: PropTypes.func.isRequired,
   putOnBasketFunction: PropTypes.func.isRequired
 };
 
