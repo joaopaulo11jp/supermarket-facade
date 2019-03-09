@@ -4,6 +4,7 @@ import {BrowserRouter, Switch} from 'react-router-dom';
 import HomeTemplateRoute from './routes/HomeTemplateRoute';
 
 import Home from "./pages/Home";
+import SecondPage from "./pages/SecondPage";
 
 class App extends Component {
   render() {
@@ -11,6 +12,7 @@ class App extends Component {
       <BrowserRouter>
         <Switch>
           <HomeTemplateRoute path="/" exact component={Home}></HomeTemplateRoute>
+          <HomeTemplateRoute path="/second" component={SecondPage}></HomeTemplateRoute>
         </Switch>
       </BrowserRouter>
     );

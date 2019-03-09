@@ -19,7 +19,7 @@ class HomeTemplate extends Component {
   }
 
   handleImageClick = (e) => {
-    console.lof('handleImageClick not implemented yet! :)');
+    console.log('handleImageClick not implemented yet! :)');
   }
 
   render (){

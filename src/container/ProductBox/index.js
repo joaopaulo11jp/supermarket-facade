@@ -50,7 +50,7 @@ class ProductBox extends Component {
     return (
       <div className={classes.root}>
         <Grid container
-          spacing={0}
+          spacing={16}
           direction="column"
           alignItems="center"
           justify="center">
@@ -64,7 +64,7 @@ class ProductBox extends Component {
         <div className={classes.productLabelSpacing}/>
         <p>{description}</p>
         <div className={classes.priceSpacing}/>
-        <p>{price}</p>
+        <p className={classes.price}>{price}</p>
         <div className={classes.quantityInputSpacing}/>
           <QuantityInput
             quantity={this.state.quantity}

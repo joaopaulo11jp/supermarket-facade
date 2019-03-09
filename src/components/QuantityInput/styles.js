@@ -21,6 +21,7 @@ export default (theme) => ({
       }
     },
     putOnBasketButton: {
+      borderRadius: 5,
       backgroundColor: theme.palette.primary.main
     },
     putOnBasketIcon: {
