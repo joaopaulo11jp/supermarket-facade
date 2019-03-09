@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
-//import Product from '../../components/Product';
 import PropTypes from 'prop-types';
 import { withStyles, Grid } from '@material-ui/core';
 
 import styles from './styles';
 import defaultProductImage from '../../assets/shopping.svg'
+import QuantityInput from '../../components/QuantityInput';
 
 const PRODUCT_IMAGE_HEIGHT = 100;
 const PRODUCT_IMAGE_WIDTH = 100;
@@ -47,7 +47,7 @@ class ProductBox extends Component {
     return (
       <div className={classes.root}>
         <Grid container
-          pacing={0}
+          spacing={0}
           direction="column"
           alignItems="center"
           justify="center">
@@ -62,6 +62,8 @@ class ProductBox extends Component {
         <p>{description}</p>
         <div className={classes.priceSpacing}/>
         <p>{price}</p>
+        <div className={classes.quantityInputSpacing}/>
+          <QuantityInput/>
         {/*<Product 
           description={description}
           image={image}

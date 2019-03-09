@@ -18,5 +18,8 @@ export default (theme) => ({
   },
   priceSpacing: {
     marginTop: theme.spacing.unit * 3
+  },
+  quantityInputSpacing: {
+    marginTop: theme.spacing.unit * 2
   }
 });
