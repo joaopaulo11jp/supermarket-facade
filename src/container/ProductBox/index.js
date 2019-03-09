@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Product from '../../components/Product';
+//import Product from '../../components/Product';
 import PropTypes from 'prop-types';
 import { withStyles, Grid } from '@material-ui/core';
 
