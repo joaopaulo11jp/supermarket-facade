@@ -32,11 +32,11 @@ class QuantityInput extends Component {
     const { classes, quantity } = this.props;
     return (
       <div className={classes.root}>
-        <Grid container
+        {/*<Grid container
           spacing={0}
           direction="row"
           alignItems="center"
-          justify="center">
+          justify="flex-start">
           <Grid item xs={3}>
             <div className={classes.subtractButton}>
               <IconButton
@@ -77,6 +77,38 @@ class QuantityInput extends Component {
               </IconButton>
             </div>
           </Grid>
+        </Grid>*/}
+        <Grid container 
+          direction="row" alignItems={'center'}>
+          <IconButton
+            className={classes.operatorButtonIcon} 
+            disableRipple 
+            disableTouchRipple 
+            color={"primary"}
+            onClick={this.handleSubtractQuantity}>
+            <RemoveIcon/>
+          </IconButton>
+          <div className={classes.quantity}>
+            {quantity}
+          </div>
+          <IconButton
+            className={classes.operatorButtonIcon} 
+            disableRipple 
+            disableTouchRipple 
+            color={"primary"}
+            onClick={this.handlePlusQuantity}>
+            <AddIcon/>
+          </IconButton>
+          <div className={classes.putOnBasketButton}>
+          <IconButton
+            className={classes.putOnBasketIcon}
+            disableRipple 
+            disableTouchRipple
+            size={'small'}
+            onClick={this.handleProductConfirmation}>
+            <ShoppingCartIcon/>
+          </IconButton>
+          </div>
         </Grid>
       </div>
     );

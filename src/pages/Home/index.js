@@ -25,7 +25,7 @@ class Home extends Component {
           justify={"flex-start"}
           direction={"row"}
           className={classes.root}>
-          <Grid item xs={3} key={1}>
+          <Grid item xs={2} key={1}>
             <ProductBox
               description={'Produto 1'}
               productId={1}
@@ -33,7 +33,7 @@ class Home extends Component {
               putOnBasketFunction={this.putOnBasket}
             />
           </Grid>
-          <Grid item xs={3} key={2}>
+          <Grid item xs={2} key={2}>
             <ProductBox
               description={'Produto 1'}
               productId={1}
@@ -41,7 +41,7 @@ class Home extends Component {
               putOnBasketFunction={this.putOnBasket}
             />
           </Grid>
-          <Grid item xs={3} key={3}>
+          <Grid item xs={2} key={3}>
             <ProductBox
               description={'Produto 2'}
               productId={2}
@@ -49,7 +49,7 @@ class Home extends Component {
               putOnBasketFunction={this.putOnBasket}
             />
           </Grid>
-          <Grid item xs={3} key={4}>
+          <Grid item xs={2} key={4}>
             <ProductBox
               description={'Produto 3'}
               productId={3}
@@ -57,7 +57,31 @@ class Home extends Component {
               putOnBasketFunction={this.putOnBasket}
             />
           </Grid>
-          <Grid item xs={3} key={4}>
+          <Grid item xs={2} key={4}>
+            <ProductBox
+              description={'Produto 3'}
+              productId={3}
+              price={'R$ 99,00'}
+              putOnBasketFunction={this.putOnBasket}
+            />
+          </Grid>
+          <Grid item xs={2} key={4}>
+            <ProductBox
+              description={'Produto 3'}
+              productId={3}
+              price={'R$ 99,00'}
+              putOnBasketFunction={this.putOnBasket}
+            />
+          </Grid>
+          <Grid item xs={2} key={4}>
+            <ProductBox
+              description={'Produto 3'}
+              productId={3}
+              price={'R$ 99,00'}
+              putOnBasketFunction={this.putOnBasket}
+            />
+          </Grid>
+          <Grid item xs={2} key={4}>
             <ProductBox
               description={'Produto 3'}
               productId={3}
