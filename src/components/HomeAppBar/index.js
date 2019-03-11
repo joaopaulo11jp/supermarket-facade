@@ -32,6 +32,11 @@ class HomeAppBar extends Component {
     console.log('Not implemented yet! :)');
   }
 
+  openSwipableMenu = (e) => {
+    if(this.props.openSwipableMenu)
+      this.props.openSwipableMenu();
+  }
+
   render() {
     const { menuAnchorEl, classes } = this.props;
     const open = Boolean(menuAnchorEl);
@@ -39,7 +44,7 @@ class HomeAppBar extends Component {
     return (
       <AppBar position="fixed" className={classes.appBarRoot}>
           <Toolbar>
-            <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
+            <IconButton className={classes.menuButton} color="inherit" aria-label="Menu" onClick={this.openSwipableMenu}>
               <MenuIcon />
             </IconButton>
             <img src={logo} alt="Bravo supermercado!" width={140.6} heigth={8.517}/>
@@ -97,7 +102,8 @@ HomeAppBar.propTypes = {
   classes: PropTypes.object.isRequired,
   menuAnchorEl: PropTypes.object,
   handleMenu: PropTypes.func.isRequired,
-  handleClose: PropTypes.func.isRequired
+  handleClose: PropTypes.func.isRequired,
+  openSwipableMenu: PropTypes.func,
 };
 
 export default withStyles(styles)(HomeAppBar);

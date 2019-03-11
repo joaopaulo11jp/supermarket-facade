@@ -16,6 +16,10 @@ export default (theme) => {
         menuButton: {
           marginLeft: -12,
           marginRight: 20,
+          visibility: 'collapse',
+          [theme.breakpoints.down('sm')]:{
+            visibility: 'visible'
+          }
         },
         search: {
           position: 'relative',

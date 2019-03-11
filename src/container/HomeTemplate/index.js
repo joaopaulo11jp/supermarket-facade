@@ -7,7 +7,8 @@ import HomeDrawer from '../../components/HomeDrawer';
 
 class HomeTemplate extends Component {
   state = {
-    menuAnchorEl: undefined
+    menuAnchorEl: undefined,
+    openSwipableMenu: false
   };
 
   handleMenu = (e) => {
@@ -22,9 +23,13 @@ class HomeTemplate extends Component {
     console.log('handleImageClick not implemented yet! :)');
   }
 
+  toggleSwipableMenu = (e) => {
+    this.setState({openSwipableMenu: !this.state.openSwipableMenu});
+  }
+
   render (){
     const { classes } = this.props;
-    const { menuAnchorEl } = this.state;
+    const { menuAnchorEl, openSwipableMenu} = this.state;
 
     return (
       <div className={classes.root}>
@@ -32,8 +37,10 @@ class HomeTemplate extends Component {
           menuAnchorEl={menuAnchorEl}
           handleMenu={this.handleMenu}
           handleClose={this.handleClose}
+          openSwipableMenu={this.toggleSwipableMenu}
         />
-        <HomeDrawer/>
+        <HomeDrawer activeSwipableMenu={openSwipableMenu}
+          closeSwipableMenu={this.toggleSwipableMenu}/>
         <main className={classes.content}>
           <div className={classes.toolbar}/>
           {this.props.children}
