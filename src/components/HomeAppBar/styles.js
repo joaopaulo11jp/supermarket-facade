@@ -10,6 +10,22 @@ export default (theme) => {
         appBarRoot: {
           zIndex: theme.zIndex.drawer + 1
         },
+        logo: {
+          [theme.breakpoints.down('xs')]:{
+            visibility: 'collapse'
+          }
+        },
+        mobileTitleToolbar: {
+          visibility: 'collapse',
+          [theme.breakpoints.down('xs')]: {
+            visibility: 'visible'
+          }
+        },
+        utilButtons: {
+          [theme.breakpoints.down('xs')]: {
+            visibility: 'collapse'
+          }
+        },
         grow: {
           flexGrow: 1,
         },
@@ -19,6 +35,9 @@ export default (theme) => {
           visibility: 'collapse',
           [theme.breakpoints.down('sm')]:{
             visibility: 'visible'
+          },
+          [theme.breakpoints.down('xs')]:{
+            visibility: 'collapse'
           }
         },
         search: {
